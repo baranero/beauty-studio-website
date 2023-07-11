@@ -36,10 +36,9 @@ const Services = () => {
     nextArrow: <Arrow/>,
     responsive: [
       {
-        breakpoint: 1920,
+        breakpoint: 2000,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
         },
       },
       {
