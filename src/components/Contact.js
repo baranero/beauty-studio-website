@@ -2,10 +2,14 @@ const Contact = () => {
   return (
     <section className="bg-[#343A56] py-6 lg:pb-0" id="about-me">
       <h3 className="text-center text-3xl my-5 font-['Playfair_Display']">Umów się na wizytę</h3>
-      <div className="ml-5 mt-8 flex justify-around ite">
+      <div className="w-[75%] mx-auto mt-8 flex flex-col lg:flex-row justify-around">
         <div>
           <h4 className="text-[#FBF0B0]">Numer telefonu</h4>
           <p className="my-4 text-lg font-bold">+48 605 332 652</p>
+        </div>
+        <div>
+          <h4 className="text-[#FBF0B0]">Email</h4>
+          <p className="my-4 text-lg font-bold">agnieszkawrobel7@o2.pl</p>
         </div>
         <div>
           <h4 className="text-[#FBF0B0]">Adres</h4>

@@ -1,37 +1,61 @@
-import { useCallback, useState } from 'react'
-import { HiMenu } from 'react-icons/hi'
-import MobileMenu from './MobileMenu'
+import { useCallback, useState, useEffect } from 'react';
+import { HiMenu } from 'react-icons/hi';
+import MobileMenu from './MobileMenu';
 
 const Header = () => {
-
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   const toggleMobileMenu = useCallback(() => {
-    setShowMobileMenu((current) => !current)
-    console.log("OK");
-  }, [])
+    setShowMobileMenu((current) => !current);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      setVisible((prevVisible) => {
+        const isScrollingUp = currentScrollPos < prevScrollPos;
+        setPrevScrollPos(currentScrollPos);
+        if (isScrollingUp) {
+          return true;
+        } else if (currentScrollPos <= 0) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
 
   return (
-    <section className="flex items-center justify-between mx-6 my-8 lg:my-14">
-      <img className="h-16 lg:hidden" src="./images/logo-logo.png" alt="Logo"/>
-      <img className="h-24 hidden lg:block lg:absolute" src="./images/logo.png" alt="Logo"/>
-      <HiMenu className={`transition lg:hidden hover:cursor-pointer hover:color-[#D1A617] ${
-              showMobileMenu ? "rotate-180" : "rotate-0"
-            }`} onClick={toggleMobileMenu} size={35}/>
-      <MobileMenu visible={showMobileMenu} toggleMobileMenu={toggleMobileMenu}/>
+    <section
+      className={`flex z-10 w-full h-[10vh] bg-[#080F29] items-center justify-between px-6 py-8 lg:py-14 ${
+        visible ? 'fixed top-0 transition-all duration-300 ease-in-out' : 'fixed -top-full transition-all duration-300 ease-in-out'
+      }`}
+    >
+      <img className="h-16 lg:hidden" src="./images/logo-logo.png" alt="Logo" />
+      <img className="h-24 hidden lg:block lg:absolute" src="./images/logo.png" alt="Logo" />
+      <HiMenu
+        className={`transition lg:hidden hover:cursor-pointer hover:color-[#D1A617] ${
+          showMobileMenu ? 'rotate-180' : 'rotate-0'
+        }`}
+        onClick={toggleMobileMenu}
+        size={35}
+      />
+      <MobileMenu visible={showMobileMenu} toggleMobileMenu={toggleMobileMenu} />
       <ul className="text-2xl hidden lg:flex lg:mx-auto lg:justify-between lg:w-64 lg:text-base">
-        <li>
-          Strona Główna
-        </li>
-        <li>
-          Usługi
-        </li>
-        <li>
-          Opinie
-        </li>
+        <li>Strona Główna</li>
+        <li>Usługi</li>
+        <li>Opinie</li>
       </ul>
     </section>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
