@@ -35,12 +35,12 @@ const Header = () => {
 
   return (
     <section
-      className={`flex z-10 w-full h-[10vh] bg-[#080F29] items-center justify-between px-6 py-8 lg:py-14 ${
+      className={`flex z-10 w-full h-[15vh] bg-[#080F29] lg:h-[20vh] items-center justify-between px-6 py-8 lg:py-14 ${
         visible ? 'fixed top-0 transition-all duration-300 ease-in-out' : 'fixed -top-full transition-all duration-300 ease-in-out'
       }`}
     >
       <img className="h-16 lg:hidden" src="./images/logo-logo.png" alt="Logo" />
-      <img className="h-24 hidden lg:block lg:absolute" src="./images/logo.png" alt="Logo" />
+      <img className="h-28 hidden lg:block lg:left-[50%] lg:right-[50%] -translate-x-[50%] lg:absolute" src="./images/logo.png" alt="Logo" />
       <HiMenu
         className={`transition lg:hidden hover:cursor-pointer hover:color-[#D1A617] ${
           showMobileMenu ? 'rotate-180' : 'rotate-0'
@@ -49,10 +49,10 @@ const Header = () => {
         size={35}
       />
       <MobileMenu visible={showMobileMenu} toggleMobileMenu={toggleMobileMenu} />
-      <ul className="text-2xl hidden lg:flex lg:mx-auto lg:justify-between lg:w-64 lg:text-base">
-        <li>Strona Główna</li>
-        <li>Usługi</li>
-        <li>Opinie</li>
+      <ul className="text-2xl hidden lg:flex ml-auto lg:justify-between lg:mr-20 lg:w-64 lg:text-base">
+        <li><a className='hover:text-[#f7c31a]' href="">Strona Główna</a></li>
+        <li><a className='hover:text-[#f7c31a]' href="">Usługi</a></li>
+        <li><a className='hover:text-[#f7c31a]' href="">Opinie</a></li>
       </ul>
     </section>
   );

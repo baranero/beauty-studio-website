@@ -62,10 +62,10 @@ const Services = () => {
 
   return (
     <section className='bg-[#343A56] pt-7 pb-14' id='services'>
-      <h2 className="text-center text-3xl mt-2 mb-5 font-['Playfair_Display']">Usługi</h2>
+      <h2 className="text-center text-3xl mb-8 font-['Playfair_Display']">Usługi</h2>
       <Slider {...settings}>
         {serviceData.map((item) => (
-          <div className="card">
+          <div key={item.id} className="card">
             <div className="card-top">
               <img
               className='w-[90%] mx-auto'
