@@ -1,4 +1,4 @@
-# Beauty Salon Website for Client
+# Beauty Salon Website
 
 Welcome to the Beauty Salon Website project! This is a React-based web application designed for a beauty salon, created for a client. It includes a homepage and various features for showcasing beauty services, images, and more.
 
