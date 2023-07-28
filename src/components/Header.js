@@ -42,7 +42,7 @@ const Header = () => {
       <img className="h-16 lg:hidden" src="./images/logo-logo.png" alt="Logo" />
       <img className="h-28 hidden lg:block lg:left-[50%] lg:right-[50%] -translate-x-[50%] lg:absolute" src="./images/logo.png" alt="Logo" />
       <HiMenu
-        className={`transition lg:hidden hover:cursor-pointer hover:color-[#D1A617] ${
+        className={`transition-all lg:hidden hover:cursor-pointer hover:text-[#f7c31a] duration-300 ${
           showMobileMenu ? 'rotate-180' : 'rotate-0'
         }`}
         onClick={toggleMobileMenu}
@@ -50,9 +50,9 @@ const Header = () => {
       />
       <MobileMenu visible={showMobileMenu} toggleMobileMenu={toggleMobileMenu} />
       <ul className="text-2xl hidden lg:flex ml-auto lg:justify-between lg:mr-20 lg:w-64 lg:text-base">
-        <li><a className='hover:text-[#f7c31a]' href="">Strona Główna</a></li>
-        <li><a className='hover:text-[#f7c31a]' href="">Usługi</a></li>
-        <li><a className='hover:text-[#f7c31a]' href="">Opinie</a></li>
+        <li><a className='hover:text-[#f7c31a] transition-all duration-300 cursor-pointer' href="">Strona Główna</a></li>
+        <li><a className='hover:text-[#f7c31a] transition-all duration-300 cursor-pointer' href="">Usługi</a></li>
+        <li><a className='hover:text-[#f7c31a] transition-all duration-300 cursor-pointer' href="">Opinie</a></li>
       </ul>
     </section>
   );

@@ -11,7 +11,8 @@ const Footer = () => {
             <BsInstagram size={35}/>
         </a>
     </div>
-    <p>&copy;2023 | All rights reserved</p>
+    <p>&copy;2023 | Wszystkie prawa zastrzeżone</p>
+    <p className='text-sm mt-2 '>Projekt i wykonanie: <a className='hover:text-[#f7c31a] transition-all duration-300' href='https://jakubbaran.dev'>jakubbaran.dev</a></p>
 </section>
   );
 };

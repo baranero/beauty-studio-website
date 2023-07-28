@@ -35,19 +35,19 @@ const MobileMenu = ({ visible, toggleMobileMenu }) => {
       }`}
     >
       <div className="flex justify-end mr-6 mt-8">
-        <AiOutlineClose className='' onClick={toggleMobileMenu} size={35} />
+        <AiOutlineClose className='transition-all hover:text-[#f7c31a] duration-300 cursor-pointer' onClick={toggleMobileMenu} size={35} />
       </div>
       <ul className="text-md leading-[3rem] ml-6 mt-10">
       <hr className='mr-5 border-[#FBF0B0]'/>
-        <li>
+        <li className='hover:text-[#f7c31a] transition-all duration-300 cursor-pointer'>
           Strona Główna
         </li>
         <hr className='mr-5 border-[#FBF0B0]'/>
-        <li>
+        <li className='hover:text-[#f7c31a] transition-all duration-300 cursor-pointer'>
           Usługi
         </li>
         <hr className='mr-5 border-[#FBF0B0]'/>
-        <li>
+        <li className='hover:text-[#f7c31a] transition-all duration-300 cursor-pointer'>
           Opinie
         </li>
         <hr className='mr-5 border-[#FBF0B0]'/>
