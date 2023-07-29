@@ -1,6 +1,8 @@
 import { useCallback, useState, useEffect } from 'react';
 import { HiMenu } from 'react-icons/hi';
 import MobileMenu from './MobileMenu';
+import Logo from '../images/logo.png'
+import MobileLogo from '../images/logo-logo.png'
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -39,8 +41,8 @@ const Header = () => {
         visible ? 'fixed top-0 transition-all duration-300 ease-in-out' : 'fixed -top-full transition-all duration-300 ease-in-out'
       }`}
     >
-      <img className="h-16 lg:hidden" src="./images/logo-logo.png" alt="Logo" />
-      <img className="h-28 hidden lg:block lg:left-[50%] lg:right-[50%] -translate-x-[50%] lg:absolute" src="./images/logo.png" alt="Logo" />
+      <img className="h-16 lg:hidden" src={MobileLogo} alt="Logo" />
+      <img className="h-28 hidden lg:block lg:left-[50%] lg:right-[50%] -translate-x-[50%] lg:absolute" src={Logo} alt="Logo" />
       <HiMenu
         className={`transition-all lg:hidden hover:cursor-pointer hover:text-[#f7c31a] duration-300 ${
           showMobileMenu ? 'rotate-180' : 'rotate-0'
