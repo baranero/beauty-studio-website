@@ -11,14 +11,9 @@ const Services = () => {
     setDefaultImage((prev) => ({
       ...prev,
       [data.target.alt]: data.target.alt,
-      linkDefault: "./images/kobido.jpg",
     }));
   };
 
-  function Arrow(props) {
-    const { style } = props;
-    return <div style={{ ...style, display: "none" }} />;
-  }
 
   const settings = {
     dots: true,
@@ -27,8 +22,6 @@ const Services = () => {
     infinite: true,
     centerPadding: "50px",
     slidesToShow: 3,
-    prevArrow: <Arrow />,
-    nextArrow: <Arrow />,
     responsive: [
       {
         breakpoint: 2000,
@@ -67,9 +60,8 @@ const Services = () => {
               <img
                 className="w-[90%] mx-auto"
                 src={
-                  defaultImage[item.title] === item.title
-                    ? defaultImage.linkDefault
-                    : item.img
+                  defaultImage[item.title] === item.title && item.img
+                  
                 }
                 alt={item.title}
                 onError={handleErrorImage}

@@ -1,9 +1,11 @@
+import AboutImage from '../images/facial.jpg'
+
 const About = () => {
   return (
     <section className="flex relative mt-[10vh] flex-col text-[#FBF0B0]" id="about">
       <img
         className="opacity-90 h-[50vh] object-cover object-top lg:h-[90vh]"
-        src="./images/facial.jpg"
+        src={AboutImage}
         alt="Massage"
       />
       <div className="text-center absolute bg-gray-600/60 h-full w-full flex">
