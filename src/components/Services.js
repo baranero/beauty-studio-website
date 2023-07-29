@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { serviceData } from "../serviceData";
+import Kobido from "../images/1.jpg";
 
 const Services = () => {
   const [defaultImage, setDefaultImage] = useState({});
@@ -11,9 +12,9 @@ const Services = () => {
     setDefaultImage((prev) => ({
       ...prev,
       [data.target.alt]: data.target.alt,
+      linkDefault: Kobido,
     }));
   };
-
 
   const settings = {
     dots: true,
@@ -60,8 +61,9 @@ const Services = () => {
               <img
                 className="w-[90%] mx-auto"
                 src={
-                  defaultImage[item.title] === item.title && item.img
-                  
+                  defaultImage[item.title] === item.title
+                    ? defaultImage.linkDefault
+                    : item.img
                 }
                 alt={item.title}
                 onError={handleErrorImage}
