@@ -48,3 +48,8 @@ export const serviceData = [
     img: './images/7.jpg'
   },
 ];
+
+
+{/* <a href="https://pl.freepik.com/darmowe-zdjecie/czarujaca-odprezona-i-delikatna-mloda-kobieta-wykonujaca-zabieg-kosmetyczny-nakladajaca-krem-na-twarz-palcami-i-szeroko-usmiechnieta-czujaca-sie-idealnie-dbajaca-o-skore_10153435.htm?fbclid=IwAR363lrwpu2_n9e2D2-yKqLcTGe_1yJSC5lTnrLgTrwnFfWj09vW8YYEZC0">Obraz autorstwa cookie_studio</a> na Freepik */}
+// Obraz autorstwa <a href="https://pl.freepik.com/darmowe-zdjecie/widok-z-gory-pojemnik-na-krem-z-roslina_13248395.htm?fbclid=IwAR1uyq7AzfGFasJy24ndP_izWyXqbO-rsghFoyThlfFTRxG4BUk8Tle9Ezo#query=beauty&position=3&from_view=keyword&track=sph">Freepik</a>
+{/* <a href="https://pl.freepik.com/darmowe-zdjecie/zblizenie-twarzy-mlodej-kobiety-relaksu-pod-delikatnym_7168611.htm?fbclid=IwAR05vh76rXSpFf8WSz6uiqjpTdWMxCgGD09dL6b0XBsK_39_GcTyA-heJXg#query=beauty&position=1&from_view=keyword&track=sph">Obraz autorstwa ArthurHidden</a> na Freepik */}
