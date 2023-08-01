@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,16 +6,6 @@ import { serviceData } from "../serviceData";
 import Kobido from "../images/1.jpg";
 
 const Services = () => {
-  const [defaultImage, setDefaultImage] = useState({});
-
-  const handleErrorImage = (data) => {
-    setDefaultImage((prev) => ({
-      ...prev,
-      [data.target.alt]: data.target.alt,
-      linkDefault: Kobido,
-    }));
-  };
-
   const settings = {
     dots: true,
     className: "center",
@@ -49,6 +39,50 @@ const Services = () => {
     ],
   };
 
+  const [serviceData, setServiceData] = useState([]);
+
+  useEffect(() => {
+    const fetchServiceData = async () => {
+      try {
+        const response = await fetch(
+          "https://serwer2213418.home.pl/autoinstalator/wordpress/wp-json/wp/v2/posts"
+        );
+        const data = await response.json();
+
+        const formattedData = data.map((post) => ({
+          id: post.id,
+          title: post.title.rendered,
+          description: removeHtmlTags(post.excerpt.rendered),
+          img: getFeaturedImage(post.content.rendered),
+        }));
+        setServiceData(formattedData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    const removeHtmlTags = (htmlString) => {
+      const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+      return doc.body.textContent || '';
+    };
+
+    const getFeaturedImage = (content) => {
+      const imgRegExp = /<img.*?src="(.*?)"/;
+      const match = content.match(imgRegExp);
+      return match ? match[1] : "";
+    };
+
+    fetchServiceData();
+  }, []);
+  console.log(serviceData);
+  const defaultImage = {
+    linkDefault: Kobido,
+  };
+
+  const handleErrorImage = (event) => {
+    event.target.src = defaultImage.linkDefault;
+  };
+
   return (
     <section className="bg-[#343A56] pt-7 pb-14" id="services">
       <h2 className="text-center text-3xl mb-8 font-['Playfair_Display']">
@@ -60,11 +94,7 @@ const Services = () => {
             <div className="card-top">
               <img
                 className="w-[90%] mx-auto"
-                src={
-                  defaultImage[item.title] === item.title
-                    ? defaultImage.linkDefault
-                    : item.img
-                }
+                src={item.img || defaultImage.linkDefault}
                 alt={item.title}
                 onError={handleErrorImage}
               />
