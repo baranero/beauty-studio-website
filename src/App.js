@@ -1,22 +1,23 @@
-import About from "./components/About";
-import Header from "./components/Header";
-import Services from "./components/Services";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import AboutMe from "./components/AboutMe";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import Layout from "./pages/Layout";
+import ServicesPage from "./pages/SerivicesPage";
+import Reviews from "./pages/Reviews";
+
+const router = createBrowserRouter([
+  {path: '/', element: <Layout/>,
+  errorElement: <NotFound/>,
+  children: [
+    {index: true, element: <Home/>}, 
+    {path: 'uslugi', element: <ServicesPage/>},
+    {path:'opinie', element: <Reviews/>}
+  ]},
+])
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <About />
-      <Services />
-      <AboutMe />
-      <Contact />
-      <Footer />
-    </div>
-  );
+  return <RouterProvider router={router} />
 }
 
 export default App;

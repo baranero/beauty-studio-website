@@ -5,6 +5,7 @@ import Logo from "../images/logo.png";
 import MobileLogo from "../images/logo-logo.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -45,24 +46,28 @@ const Header = () => {
           : "fixed -top-full transition-all delay-75 ease-in-out"
       }`}
     >
-      <motion.img
-        variants={fadeIn(0.1)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        className="h-16 lg:hidden"
-        src={MobileLogo}
-        alt="Logo"
-      />
-      <motion.img
-        variants={fadeIn(0.2)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        className="h-28 mx-auto lg:col-start-2 lg:col-end-2 hidden lg:block"
-        src={Logo}
-        alt="Logo"
-      />
+      <Link to="/">
+        <motion.img
+          variants={fadeIn(0.1)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="h-16 lg:hidden"
+          src={MobileLogo}
+          alt="Logo"
+        />
+      </Link>
+      <Link to="/">
+        <motion.img
+          variants={fadeIn(0.2)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="h-28 mx-auto lg:col-start-2 lg:col-end-2 hidden lg:block"
+          src={Logo}
+          alt="Logo"
+        />
+      </Link>
       <motion.div
         variants={fadeIn(0.2)}
         initial="hidden"
@@ -89,28 +94,28 @@ const Header = () => {
         className=" lg:col-start-3 row-start-1 text-2xl hidden lg:flex ml-auto lg:justify-between lg:mr-20 lg:w-64 lg:text-base"
       >
         <li>
-          <a
+          <Link
             className="hover:text-[#ffffff] transition-all duration-300 cursor-pointer"
-            href=""
+            to="/"
           >
             Strona Główna
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             className="hover:text-[#ffffff] transition-all duration-300 cursor-pointer"
-            href=""
+            to="/uslugi"
           >
             Usługi
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             className="hover:text-[#ffffff] transition-all duration-300 cursor-pointer"
-            href=""
+            to="/opinie"
           >
             Opinie
-          </a>
+          </Link>
         </li>
       </motion.ul>
     </motion.section>

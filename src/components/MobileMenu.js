@@ -1,5 +1,6 @@
 import { AiOutlineClose } from "react-icons/ai";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const MobileMenu = ({ visible, toggleMobileMenu }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -44,15 +45,15 @@ const MobileMenu = ({ visible, toggleMobileMenu }) => {
       <ul className="text-md leading-[3rem] ml-6 mt-10">
         <hr className="mr-5 border-[#FBF0B0]" />
         <li className="hover:text-[#f7c31a] transition-all duration-300 cursor-pointer">
-          Strona Główna
+          <Link to="/">Strona Główna</Link>
         </li>
         <hr className="mr-5 border-[#FBF0B0]" />
         <li className="hover:text-[#f7c31a] transition-all duration-300 cursor-pointer">
-          Usługi
+          <Link to="/uslugi">Usługi</Link>
         </li>
         <hr className="mr-5 border-[#FBF0B0]" />
         <li className="hover:text-[#f7c31a] transition-all duration-300 cursor-pointer">
-          Opinie
+          <Link to="/opinie">Opinie</Link>
         </li>
         <hr className="mr-5 border-[#FBF0B0]" />
       </ul>
