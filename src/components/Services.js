@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { serviceData } from "../serviceData";
+import { motion } from "framer-motion";
 import Kobido from "../images/1.jpg";
+import { fadeIn } from "../variants";
+import { useInView } from "react-intersection-observer";
 
 const Services = () => {
   const settings = {
@@ -62,8 +64,8 @@ const Services = () => {
     };
 
     const removeHtmlTags = (htmlString) => {
-      const doc = new DOMParser().parseFromString(htmlString, 'text/html');
-      return doc.body.textContent || '';
+      const doc = new DOMParser().parseFromString(htmlString, "text/html");
+      return doc.body.textContent || "";
     };
 
     const getFeaturedImage = (content) => {
@@ -74,31 +76,46 @@ const Services = () => {
 
     fetchServiceData();
   }, []);
-  console.log(serviceData);
-  const defaultImage = {
-    linkDefault: Kobido,
-  };
 
   const handleErrorImage = (event) => {
-    event.target.src = defaultImage.linkDefault;
+    event.target.src = Kobido;
   };
 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
   return (
-    <section className="bg-[#343A56] pt-7 pb-14" id="services">
-      <h2 className="text-center text-3xl mb-8 font-['Playfair_Display']">
+    <motion.section ref={ref} className="bg-[#343A56] pt-7 pb-14" id="services">
+      <motion.h2
+        ref={ref}
+        variants={fadeIn(0.3)}
+        initial="hidden"
+        animate={inView ? "show" : "hidden"}
+        exit="hidden"
+        className="text-center text-3xl mb-8 font-['Playfair_Display']"
+      >
         Usługi
-      </h2>
+      </motion.h2>
       <Slider {...settings}>
         {serviceData.map((item) => (
-          <div key={item.id} className="card">
+          <motion.div
+            key={item.id}
+            className="card"
+            variants={fadeIn(0.3)}
+            initial="hidden"
+            animate={inView ? "show" : "hidden"}
+            exit="hidden"
+          >
             <div className="card-top">
               <img
                 className="w-[90%] mx-auto"
-                src={item.img || defaultImage.linkDefault}
+                src={item.img || Kobido}
                 alt={item.title}
                 onError={handleErrorImage}
               />
-              <h3 className='text-center font-bold text-xl mx-5 my-2 font-["Playfair_Display"]'>
+              <h3 className="text-center font-bold text-xl mx-5 my-2 font-['Playfair_Display']">
                 {item.title}
               </h3>
             </div>
@@ -107,10 +124,10 @@ const Services = () => {
                 {item.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </Slider>
-    </section>
+    </motion.section>
   );
 };
 
