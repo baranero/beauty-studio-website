@@ -5,16 +5,21 @@ import Logo from "../images/logo.png";
 import MobileLogo from "../images/logo-logo.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const {pathname} = useLocation();
 
   const toggleMobileMenu = useCallback(() => {
     setShowMobileMenu((current) => !current);
   }, []);
+
+  useEffect(() => {
+    setShowMobileMenu(false)
+  }, [pathname])
 
   useEffect(() => {
     const handleScroll = () => {
