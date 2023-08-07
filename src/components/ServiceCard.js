@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 
 const ServiceCard = () => {
+  const [serviceData, setServiceData] = useState([]);
+  const [selectedObject, setSelectedObject] = useState();
 
-    const [serviceData, setServiceData] = useState([]);
-    const [selectedObject, setSelectedObject] = useState();
-
-    const handleItemClick = (id) => {
-        const clickedObject = serviceData.find((obj) => obj.id === id);
-        setSelectedObject(clickedObject);
-      };
+  const handleItemClick = (id) => {
+    const clickedObject = serviceData.find((obj) => obj.id === id);
+    setSelectedObject(clickedObject);
+  };
 
   useEffect(() => {
     const fetchServiceData = async () => {
@@ -25,7 +24,7 @@ const ServiceCard = () => {
           img: getFeaturedImage(post.content.rendered),
         }));
         setServiceData(formattedData);
-        setSelectedObject(formattedData[0])
+        setSelectedObject(formattedData[0]);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -47,29 +46,39 @@ const ServiceCard = () => {
 
   console.log(serviceData);
 
-    return (
-        <div className="bg-[#343A56] lg:grid lg:grid-cols-7 mx-auto min-h-[65vh] items-center justify-self-center">
-            <ul className="lg:text-right text-center lg:col-span-3 lg:w-1/2 justify-self-end my-auto lg:py-5">
-                {serviceData.map((item) => {
-                  const isSelected = item.id === selectedObject?.id;
+  return (
+    <div className="bg-[#343A56] lg:grid lg:grid-cols-7 mx-auto min-h-[65vh] items-center justify-self-center">
+      <ul className="lg:text-right text-center lg:col-span-3 lg:w-1/2 justify-self-end my-auto lg:py-5">
+        {serviceData.map((item) => {
+          const isSelected = item.id === selectedObject?.id;
 
-                    return <li
-                    className={`border-b border-[#FBF0B0] hover:cursor-pointer hover:transition-all duration-300 p-2 hover:bg-[#545e8b] ${
-                        isSelected ? "bg-[#545e8b] text-[#fff]" : ""
-                    }`}
-                    key={item.id}
-                    onClick={() => handleItemClick(item.id)}
-                >
-                    {item.title}
-                </li>
-                })}
-            </ul>
-{selectedObject && (<div className="lg:col-span-4 lg:py-8 py-2">
-                <img className="lg:w-[30vw] lg:ml-20 lg:rounded-lg" src={selectedObject.img} alt={selectedObject.title}/>
-                <p className="lg:w-[30vw] mx-6 lg:ml-20 mt-6 text-justify">{selectedObject.description}</p>
-            </div>)}
+          return (
+            <li
+              className={`border-b border-[#FBF0B0] hover:cursor-pointer hover:transition-all duration-300 p-2 hover:bg-[#545e8b] ${
+                isSelected ? "bg-[#545e8b] text-[#fff]" : ""
+              }`}
+              key={item.id}
+              onClick={() => handleItemClick(item.id)}
+            >
+              {item.title}
+            </li>
+          );
+        })}
+      </ul>
+      {selectedObject && (
+        <div className="lg:col-span-4 lg:py-8 py-2">
+          <img
+            className="lg:w-[30vw] lg:ml-20 lg:rounded-lg"
+            src={selectedObject.img}
+            alt={selectedObject.title}
+          />
+          <p className="lg:w-[30vw] mx-6 lg:ml-20 mt-6 text-justify">
+            {selectedObject.description}
+          </p>
         </div>
-    )
-}
+      )}
+    </div>
+  );
+};
 
-export default ServiceCard
+export default ServiceCard;

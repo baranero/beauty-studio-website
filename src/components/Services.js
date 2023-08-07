@@ -87,7 +87,11 @@ const Services = () => {
   });
 
   return (
-    <motion.section ref={ref} className="bg-[#343A56] pt-7 pb-14 min-h-[60vh]" id="services">
+    <motion.section
+      ref={ref}
+      className="bg-[#343A56] pt-7 pb-14 min-h-[60vh]"
+      id="services"
+    >
       <motion.h2
         ref={ref}
         variants={fadeIn(0.3)}

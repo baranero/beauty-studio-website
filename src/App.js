@@ -7,17 +7,20 @@ import ServicesPage from "./pages/SerivicesPage";
 import Reviews from "./pages/Reviews";
 
 const router = createBrowserRouter([
-  {path: '/', element: <Layout/>,
-  errorElement: <NotFound/>,
-  children: [
-    {index: true, element: <Home/>}, 
-    {path: 'uslugi', element: <ServicesPage/>},
-    {path:'opinie', element: <Reviews/>}
-  ]},
-])
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <NotFound />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "uslugi", element: <ServicesPage /> },
+      { path: "opinie", element: <Reviews /> },
+    ],
+  },
+]);
 
 function App() {
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} />;
 }
 
 export default App;

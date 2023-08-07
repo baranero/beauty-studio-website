@@ -1,12 +1,14 @@
-import ServiceCard from "../components/ServiceCard"
-import Services from "../components/Services"
+import ServiceCard from "../components/ServiceCard";
+import Services from "../components/Services";
 
 const ServicesPage = () => {
-    return (
-        <>
-            <div className="mt-[20vh]"><ServiceCard/></div>
-        </>
-    )
-}
+  return (
+    <>
+      <div className="mt-[20vh]">
+        <ServiceCard />
+      </div>
+    </>
+  );
+};
 
-export default ServicesPage
+export default ServicesPage;
