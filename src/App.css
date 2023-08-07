@@ -5,11 +5,3 @@
 .slick-dots li.slick-active button:before{
   color: #fff;
 }
-
-.slick-arrow.slick-next::before {
-  display: none;
-}
-
-.slick-arrow, .slick-next {
-  display: none;
-}

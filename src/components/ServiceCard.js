@@ -48,8 +48,8 @@ const ServiceCard = () => {
   console.log(serviceData);
 
     return (
-        <div className="bg-[#343A56] lg:grid lg:grid-cols-5 mx-auto min-h-[65vh] items-center justify-self-center">
-            <ul className="lg:text-right text-center lg:col-span-2 lg:w-1/2 justify-self-end my-auto lg:py-5">
+        <div className="bg-[#343A56] lg:grid lg:grid-cols-7 mx-auto min-h-[65vh] items-center justify-self-center">
+            <ul className="lg:text-right text-center lg:col-span-3 lg:w-1/2 justify-self-end my-auto lg:py-5">
                 {serviceData.map((item) => {
                   const isSelected = item.id === selectedObject?.id;
 
@@ -64,9 +64,9 @@ const ServiceCard = () => {
                 </li>
                 })}
             </ul>
-{selectedObject && (<div className="lg:col-span-3 mx-30 lg:py-8 py-2">
-                <img className="lg:w-1/2 mx-auto lg:rounded-lg" src={selectedObject.img} alt={selectedObject.title}/>
-                <p className="lg:w-[40vw] lg:mx-auto mx-6 mt-6 text-justify">{selectedObject.description}</p>
+{selectedObject && (<div className="lg:col-span-4 lg:py-8 py-2">
+                <img className="lg:w-[30vw] lg:ml-20 lg:rounded-lg" src={selectedObject.img} alt={selectedObject.title}/>
+                <p className="lg:w-[30vw] mx-6 lg:ml-20 mt-6 text-justify">{selectedObject.description}</p>
             </div>)}
         </div>
     )
