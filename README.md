@@ -1,58 +1,44 @@
 # Beauty Salon Website
 
-Welcome to the Beauty Salon Website project! This is a React-based web application designed for a beauty salon, created for a client. It includes a homepage and various features for showcasing beauty services, images, and more.
+This documentation provides an overview of the commercial website developed for a cosmetology salon client. The website is built using React and JavaScript for the frontend, with various libraries and tools such as Tailwind CSS, React Slick, Framer Motion, Material UI, and React Icons. The backend is powered by WordPress, utilized as a headless CMS, and data is fetched from WordPress using its REST API.
 
-## Getting Started
+## Table of Contents
 
-To run the Beauty Salon Website locally on your machine, follow these steps:
+- Project Overview
+- Frontend Technologies
+- Backend Configuration
+- Usage
+- Deployment
+- Contributing
+- License
 
-### Prerequisites
+## Project Overview
 
-Before running the application, make sure you have the following software installed on your system:
+The website is a commercial platform developed for a cosmetology salon. It aims to showcase the salon's services, products, pricing, and other relevant information to potential clients. The project is divided into frontend and backend components, utilizing modern web development technologies and practices.
 
-1. Node.js: Ensure you have Node.js installed. You can download it from the official website: [https://nodejs.org/](https://nodejs.org/)
+## Frontend Technologies
+The frontend of the website is built using React, a popular JavaScript library for building user interfaces. Various additional libraries and tools have been integrated to enhance the user experience and design:
 
-### Installation
+- Tailwind CSS: A utility-first CSS framework for creating responsive and stylish designs.
+- React Slick: A carousel/slider component for displaying images and content.
+- Framer Motion: A motion library for creating smooth animations and transitions.
+- Material UI: A UI framework that provides pre-designed components for a consistent and polished look.
+- React Icons: A collection of customizable SVG icons for usage throughout the application.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/baranero/beauty-website.git
+## Backend Configuration
+The backend of the website is powered by WordPress, used as a headless CMS. This allows for content management and data storage while decoupling the frontend from the backend. The WordPress REST API is utilized to fetch data and content, enabling seamless integration between the frontend and the CMS.
 
-2. Change into the project directory:
-   ```bash
-   cd beauty-website
+Key features of the backend configuration:
 
-3. Install the project dependencies using npm:
-   ```bash
-   npm install
+- WordPress: A popular content management system utilized as a headless CMS.
+- Custom Post Types: Defined custom post types for services, products, and other relevant information.
+- REST API: Utilized the WordPress REST API to expose data and content for consumption by the frontend.
 
-### Running the App
+## Usage
+To run the website locally, follow these steps:
 
-After installing the dependencies, you can start the development server:
-
-
-      npm start
-      
-The development server will compile the code and open the website in your default web browser. If it doesn't automatically open, you can access it at http://localhost:3000/.
-
-### Building the App
-
-To build the production-ready version of the website, run the following command:
-
-
-    npm run build
-
-This will create an optimized production build in the build directory.
-
-### Deployment
-
-To deploy the Beauty Salon Website, you can use the following command:
-
-
-    npm run deploy
-
-This command deploys the application using gh-pages. After successful deployment, you can access the website at the specified GitHub Pages URL.
-
-### See live
-
-https://baranero.github.io/beauty-website/
+1. Clone the repository: git clone https://github.com/baranero/beauty-website.git
+2. Navigate to the project directory: cd beauty-website
+3. Install dependencies: npm install
+4. Start the development server: npm start
+5. Access the website in your browser at http://localhost:3000
