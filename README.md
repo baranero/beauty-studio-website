@@ -42,3 +42,8 @@ To run the website locally, follow these steps:
 3. Install dependencies: npm install
 4. Start the development server: npm start
 5. Access the website in your browser at http://localhost:3000
+
+## Deployment
+The website can be deployed using various platforms and methods. One common approach is to utilize platforms like Netlify, Vercel, or GitHub Pages for frontend deployment. The backend (WordPress) can be hosted on a suitable server or cloud platform.
+
+For detailed deployment instructions, consult the documentation of the chosen deployment platform and hosting service.
