@@ -1,4 +1,4 @@
-import AboutMeImage from "../images/bg.jpg";
+// import AboutMeImage from "../images/profile.jpg";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { useInView } from "react-intersection-observer";
@@ -17,7 +17,7 @@ const AboutMe = () => {
         initial="hidden"
         animate={inView ? "show" : "hidden"}
         exit="hidden"
-        src={AboutMeImage}
+        src="../images/profile.jpg"
         alt="Kobido massage"
         className="lg:h-[70vh] lg:mt-12 lg:mx-auto"
       />

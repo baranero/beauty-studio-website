@@ -114,7 +114,7 @@ const Services = () => {
           >
             <div className="card-top">
               <img
-                className="w-[90%] mx-auto"
+                className="w-[90%] max-h-[160px] lg:max-h-[330px] object-cover mx-auto"
                 src={item.img || Kobido}
                 alt={item.title}
                 onError={handleErrorImage}

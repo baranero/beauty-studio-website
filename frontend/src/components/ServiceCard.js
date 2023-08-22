@@ -48,7 +48,7 @@ const ServiceCard = () => {
 
   return (
     <div className="bg-[#343A56] lg:grid lg:grid-cols-7 mx-auto min-h-[65vh] items-center justify-self-center">
-      <ul className="lg:text-right text-center lg:col-span-3 lg:w-1/2 justify-self-end my-auto lg:py-5">
+      <ul className="lg:text-right lg:absolute left-0 top-[35%] text-center lg:col-span-3 lg:w-2/5 justify-self-end mb-5 lg:py-5">
         {serviceData.map((item) => {
           const isSelected = item.id === selectedObject?.id;
 
@@ -66,13 +66,13 @@ const ServiceCard = () => {
         })}
       </ul>
       {selectedObject && (
-        <div className="lg:col-span-4 lg:py-8 py-2">
+        <div className="lg:col-span-4 lg:col-start-4 lg:py-8 py-2">
           <img
-            className="lg:w-[30vw] lg:ml-20 lg:rounded-lg"
+            className="lg:w-[30vw] lg:max-h-[60vh] object-cover lg:ml-20 lg:rounded-lg"
             src={selectedObject.img}
             alt={selectedObject.title}
           />
-          <p className="lg:w-[30vw] mx-6 lg:ml-20 mt-6 text-justify">
+          <p className="lg:w-[30vw] mx-6 lg:ml-20 mt-6 mb-10 text-justify">
             {selectedObject.description}
           </p>
         </div>
