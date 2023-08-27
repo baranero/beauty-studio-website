@@ -37,10 +37,10 @@ Key features of the backend configuration:
 ## Usage
 To run the website locally, follow these steps:
 
-1. Clone the repository: git clone https://github.com/baranero/beauty-website.git
-2. Navigate to the project directory: cd beauty-website
-3. Install dependencies: npm install
-4. Start the development server: npm start
+1. Clone the repository: `git clone https://github.com/baranero/beauty-website.git`
+2. Navigate to the project directory: `cd beauty-website`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
 5. Access the website in your browser at http://localhost:3000
 
 ## Deployment
