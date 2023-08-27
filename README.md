@@ -39,7 +39,7 @@ To run the website locally, follow these steps:
 
 1. Clone the repository:<br>
 
-   `git clone https://github.com/baranero/beauty-website.git`
+`git clone https://github.com/baranero/beauty-website.git`
    
 2. Navigate to the project directory:<br>
 
