@@ -37,23 +37,23 @@ Key features of the backend configuration:
 ## Usage
 To run the website locally, follow these steps:
 
-1. Clone the repository:
+1. Clone the repository:<br>
 
    `git clone https://github.com/baranero/beauty-website.git`
    
-2. Navigate to the project directory:
+2. Navigate to the project directory:<br>
 
  `cd beauty-website`
   
-4. Install dependencies:
+4. Install dependencies:<br>
   
  `npm install`
    
-5. Start the development server:
+5. Start the development server:<br>
    
-6. `npm start`
+ `npm start`
     
-7. Access the website in your browser at http://localhost:3000
+6. Access the website in your browser at http://localhost:3000
 
 ## Deployment
 The website can be deployed using various platforms and methods. One common approach is to utilize platforms like Netlify, Vercel, or GitHub Pages for frontend deployment. The backend (WordPress) can be hosted on a suitable server or cloud platform.
