@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const ServiceCard = () => {
+const ServiceCategory = (props) => {
   const [serviceData, setServiceData] = useState([]);
   const [selectedObject, setSelectedObject] = useState();
 
@@ -13,7 +13,7 @@ const ServiceCard = () => {
     const fetchServiceData = async () => {
       try {
         const response = await fetch(
-          "https://wrobelagnieszka.pl/autoinstalator/wordpress/wp-json/wp/v2/posts?per_page=100"
+          `https://wrobelagnieszka.pl/autoinstalator/wordpress/wp-json/wp/v2/posts?categories=${props.categoryId}&per_page=100`
         );
         const data = await response.json();
 
@@ -81,4 +81,4 @@ const ServiceCard = () => {
   );
 };
 
-export default ServiceCard;
+export default ServiceCategory;

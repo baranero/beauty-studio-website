@@ -11,15 +11,15 @@ const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
   const toggleMobileMenu = useCallback(() => {
     setShowMobileMenu((current) => !current);
   }, []);
 
   useEffect(() => {
-    setShowMobileMenu(false)
-  }, [pathname])
+    setShowMobileMenu(false);
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +42,16 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPos]);
+
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+  const handleMouseEnter = () => {
+    setDropdownVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownVisible(false);
+  };
 
   return (
     <motion.section
@@ -106,13 +116,32 @@ const Header = () => {
             Strona Główna
           </Link>
         </li>
-        <li>
+        <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <Link
             className="hover:text-[#ffffff] transition-all duration-300 cursor-pointer"
             to="/uslugi"
           >
             Usługi
           </Link>
+          {isDropdownVisible && (
+            <div className="absolute right-0 mr-10 bg-[#343A56]">
+              <ul className="text-md leading-[3rem]">
+              <hr className=" border-[#FBF0B0]" />
+                <Link to="/uslugi/pielegnacja-dloni">
+                  <li className="hover:text-[#f7c31a] transition-all mx-6 duration-300 cursor-pointer">Pielęgnacja dłoni</li>
+                </Link>
+                <hr className=" border-[#FBF0B0]" />
+                <Link to="/uslugi/pielegnacja-oczu">
+                  <li className="hover:text-[#f7c31a] transition-all mx-6 duration-300 cursor-pointer">Pielęgnacja oprawy oczu</li>
+                </Link>
+                <hr className=" border-[#FBF0B0]" />
+                <Link to="/uslugi/pielegnacja-twarzy">
+                  <li className="hover:text-[#f7c31a] transition-all mx-6 duration-300 cursor-pointer">Pielęgnacja i masaże twarzy</li>
+                </Link>
+                <hr className=" border-[#FBF0B0]" />
+              </ul>
+            </div>
+          )}
         </li>
         <li>
           <Link

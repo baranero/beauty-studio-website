@@ -1,5 +1,4 @@
 import ServiceCard from "../components/ServiceCard";
-import Services from "../components/Services";
 
 const ServicesPage = () => {
   return (
