@@ -20,7 +20,7 @@ const ServiceCard = () => {
         const formattedData = data.map((post) => ({
           id: post.id,
           title: post.title.rendered,
-          description: removeHtmlTags(post.excerpt.rendered),
+          description: removeHtmlTags(post.content.rendered),
           img: getFeaturedImage(post.content.rendered),
         }));
         setServiceData(formattedData);

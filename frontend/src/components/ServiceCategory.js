@@ -20,7 +20,7 @@ const ServiceCategory = (props) => {
         const formattedData = data.map((post) => ({
           id: post.id,
           title: post.title.rendered,
-          description: removeHtmlTags(post.excerpt.rendered),
+          description: removeHtmlTags(post.content.rendered),
           img: getFeaturedImage(post.content.rendered),
         }));
         setServiceData(formattedData);
@@ -47,7 +47,7 @@ const ServiceCategory = (props) => {
   console.log(serviceData);
 
   return (
-    <div className="bg-[#343A56] lg:grid lg:grid-cols-7 mx-auto items-center justify-self-center">
+    <div className=" lg:grid lg:grid-cols-7 mx-auto items-center justify-self-center">
       <ul className="lg:text-right h-max lg:absolute left-0 top-[20vh] text-center lg:col-span-3 lg:w-2/5 justify-self-end mb-5 lg:py-5">
         {serviceData.map((item) => {
           const isSelected = item.id === selectedObject?.id;

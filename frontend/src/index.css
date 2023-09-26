@@ -12,5 +12,8 @@ html {
   color: #f4d367;
   font-family: "Open Sans", "sans-serif";
   scroll-behavior: smooth;
-  overflow-x: hidden;
+}
+html {
+  overflow-y: scroll;
+
 }
