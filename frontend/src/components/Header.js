@@ -116,32 +116,33 @@ const Header = () => {
             Strona Główna
           </Link>
         </li>
-        <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <li className=""  onMouseLeave={handleMouseLeave}>
           <Link
-            className="hover:text-[#ffffff] transition-all duration-300 cursor-pointer"
+          onMouseEnter={handleMouseEnter}
+            className="hover:text-[#ffffff] transition-all duration-300 cursor-pointer group"
             to="/uslugi"
           >
             Usługi
           </Link>
-          {isDropdownVisible && (
-            <div className="absolute right-0 mr-10 bg-[#343A56]">
-              <ul className="text-md leading-[3rem]">
+          
+            <div className={`${isDropdownVisible ? "opacity-100" : "opacity-0"} transition-all ease-in duration-300 absolute right-0 mr-10 bg-[#343A56]`}>
+              <ul className="text-md leading-[3rem] cursor-default">
               <hr className=" border-[#FBF0B0]" />
-                <Link to="/uslugi/pielegnacja-dloni">
-                  <li className="hover:text-[#f7c31a] transition-all mx-6 duration-300 cursor-pointer">Pielęgnacja dłoni</li>
+                <Link className="cursor-auto" to="/uslugi/pielegnacja-dloni">
+                  <li className={`hover:text-[#f7c31a] transition-all mx-6 duration-300 ${isDropdownVisible ? "cursor-pointer" : "cursor-default"}`} >Pielęgnacja dłoni</li>
                 </Link>
                 <hr className=" border-[#FBF0B0]" />
-                <Link to="/uslugi/pielegnacja-oczu">
-                  <li className="hover:text-[#f7c31a] transition-all mx-6 duration-300 cursor-pointer">Pielęgnacja oprawy oczu</li>
+                <Link className="cursor-auto" to="/uslugi/pielegnacja-oczu">
+                  <li className={`hover:text-[#f7c31a] transition-all mx-6 duration-300 ${isDropdownVisible ? "cursor-pointer" : "cursor-default"}`}>Pielęgnacja oprawy oczu</li>
                 </Link>
                 <hr className=" border-[#FBF0B0]" />
-                <Link to="/uslugi/pielegnacja-twarzy">
-                  <li className="hover:text-[#f7c31a] transition-all mx-6 duration-300 cursor-pointer">Pielęgnacja i masaże twarzy</li>
+                <Link className="cursor-auto" to="/uslugi/pielegnacja-twarzy">
+                  <li className={`hover:text-[#f7c31a] transition-all mx-6 duration-300 ${isDropdownVisible ? "cursor-pointer" : "cursor-default"}`}>Pielęgnacja i masaże twarzy</li>
                 </Link>
                 <hr className=" border-[#FBF0B0]" />
               </ul>
             </div>
-          )}
+          
         </li>
         <li>
           <Link
