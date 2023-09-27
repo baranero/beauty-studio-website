@@ -4,8 +4,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
 import Kobido from "../images/1.jpg";
+import handsImg from "../images/2.jpg";
+import eyeImg from "../images/3.jpg";
 import { fadeIn } from "../variants";
 import { useInView } from "react-intersection-observer";
+import ServiceCategoryCard from "./ServiceCategoryCard";
 
 const Services = () => {
   const settings = {
@@ -13,7 +16,7 @@ const Services = () => {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "50px",
+    centerPadding: "0px",
     slidesToShow: 3,
     responsive: [
       {
@@ -21,6 +24,7 @@ const Services = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          centerPadding: "50px",
         },
       },
       {
@@ -29,6 +33,7 @@ const Services = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1,
+          arrows: false,
         },
       },
       {
@@ -36,6 +41,7 @@ const Services = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
     ],
@@ -103,33 +109,30 @@ const Services = () => {
         Usługi
       </motion.h2>
       <Slider {...settings}>
-        {serviceData.map((item) => (
-          <motion.div
-            key={item.id}
-            className="card"
-            variants={fadeIn(0.3)}
-            initial="hidden"
-            animate={inView ? "show" : "hidden"}
-            exit="hidden"
-          >
-            <div className="card-top">
-              <img
-                className="w-[90%] max-h-[160px] lg:min-h-[330px] object-cover mx-auto"
-                src={item.img || Kobido}
-                alt={item.title}
-                onError={handleErrorImage}
-              />
-              <h3 className="text-center font-bold text-xl mx-5 my-2 font-['Playfair_Display']">
-                {item.title}
-              </h3>
-            </div>
-            <div className="card-bottom">
-              <p className="text-center text-sm mx-3 mb-2 leading-6">
-                {item.description}
-              </p>
-            </div>
-          </motion.div>
-        ))}
+        <ServiceCategoryCard
+        ref={ref}
+        inView={inView}
+          img={handsImg}
+          title="Pielęgnacja dłoni"
+          description="Pielęgnacja dłoni to nie tylko kwestia estetyki, ale przede wszystkim zdrowia i komfortu. Nasze usługi pielęgnacji dłoni to kompleksowe rozwiązania, które obejmują nawilżanie, odżywianie oraz pielęgnację paznokci. Dzięki nim Twoje dłonie będą nie tylko pięknie wyglądać, ale także czuć się zdrowo i komfortowo. Pozwól nam zadbać o Twoje dłonie i ciesz się ich naturalną urodą każdego dnia."
+          path="/uslugi/pielegnacja-dloni"
+        />
+        <ServiceCategoryCard
+        ref={ref}
+        inView={inView}
+          img={eyeImg}
+          title="Pielęgnacja oprawy oczu"
+          description="Pielęgnacja oprawy oczu to kluczowy krok w dbaniu o zdrowie i urodę. Nasze usługi pielęgnacji oprawy oczu obejmują profesjonalne zabiegi, które pomagają wzmocnić rzęsy, podkreślić brwi i redukować zmęczenie oczu. Dzięki naszym specjalistycznym technikom i produktom, uzyskasz piękne i zdrowe oczy. Zadbaj o swoją oprawę oczu już dziś i ciesz się wyrazistym spojrzeniem."
+          path="/uslugi/pielegnacja-oczu"
+        />
+        <ServiceCategoryCard
+        ref={ref}
+        inView={inView}
+          img={Kobido}
+          title="Pielęgnacja i masaże twarzy"
+          description="Pielęgnacja i masaż twarzy to kluczowy element zachowania zdrowej i promiennej skóry. Poprzez delikatne oczyszczanie, nawilżanie i masaż, można redukować napięcie mięśni, stymulować krążenie krwi oraz zachować młodszy wygląd skóry. Nasze profesjonalne usługi pielęgnacji i masażu twarzy pomagają odprężyć się i odzyskać naturalną piękność."
+          path="/uslugi/pielegnacja-twarzy"
+        />
       </Slider>
     </motion.section>
   );

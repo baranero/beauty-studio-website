@@ -68,7 +68,7 @@ const ServiceCategory = (props) => {
       {selectedObject && (
         <div className="lg:col-span-4 lg:col-start-4 lg:py-8 py-2">
           <img
-            className="lg:w-[30vw] mx-auto lg:h-[50vh] object-cover lg:ml-20 lg:rounded-lg"
+            className="lg:w-[30vw] h-[50vh] w-full mx-auto lg:h-[50vh] object-cover lg:ml-20 lg:rounded-lg"
             src={selectedObject.img}
             alt={selectedObject.title}
           />

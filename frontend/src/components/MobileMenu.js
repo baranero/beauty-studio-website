@@ -50,6 +50,36 @@ const MobileMenu = ({ visible, toggleMobileMenu }) => {
         <hr className="mr-5 border-[#FBF0B0]" />
         <li className="hover:text-[#f7c31a] transition-all duration-300 cursor-pointer">
           <Link to="/uslugi">Usługi</Link>
+
+          <div className={`right-0 mr-5 `}>
+            <ul className="text-md leading-[3rem] cursor-default">
+              <hr className=" border-[#FBF0B0]" />
+              <Link to="/uslugi/pielegnacja-dloni">
+                <li
+                  className={`hover:text-[#f7c31a] transition-all mx-6 duration-300`}
+                >
+                  Pielęgnacja dłoni
+                </li>
+              </Link>
+              <hr className=" border-[#FBF0B0]" />
+              <Link to="/uslugi/pielegnacja-oczu">
+                <li
+                  className={`hover:text-[#f7c31a] transition-all mx-6 duration-300`}
+                >
+                  Pielęgnacja oprawy oczu
+                </li>
+              </Link>
+              <hr className=" border-[#FBF0B0]" />
+              <Link to="/uslugi/pielegnacja-twarzy">
+                <li
+                  className={`hover:text-[#f7c31a] transition-all mx-6 duration-300`}
+                >
+                  Pielęgnacja i masaże twarzy
+                </li>
+              </Link>
+              <hr className=" border-[#FBF0B0]" />
+            </ul>
+          </div>
         </li>
         <hr className="mr-5 border-[#FBF0B0]" />
         <li className="hover:text-[#f7c31a] transition-all duration-300 cursor-pointer">

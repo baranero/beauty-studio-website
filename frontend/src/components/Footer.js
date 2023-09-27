@@ -22,9 +22,9 @@ const Footer = () => {
         Projekt i wykonanie:{" "}
         <a
           className="hover:text-[#f7c31a] transition-all duration-300"
-          href="https://jakubbaran.dev"
+          href="https://jakubbaran.pl"
         >
-          jakubbaran.dev
+          jakubbaran.pl
         </a>
       </p>
     </section>

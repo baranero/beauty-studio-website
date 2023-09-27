@@ -34,15 +34,15 @@ const About = () => {
             dobrą atmosferę i kojący klimat co wpływa zarówno na ciało jak i
             ducha.
           </motion.p>
-          <motion.button
+          <a href="#services"><motion.button
             variants={fadeIn(0.3)}
             initial="hidden"
             animate="show"
             exit="hidden"
             className="bg-[#96939B] text-[#080F29] mt-10 w-48 p-4 mx-auto hover:bg-[#727272] transition-all duration-300 ease-in"
           >
-            <a href="#services">Dowiedz się więcej</a>
-          </motion.button>
+            Dowiedz się więcej
+          </motion.button></a>
         </div>
       </div>
     </section>
