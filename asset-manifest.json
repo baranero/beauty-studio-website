@@ -1,31 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.ba1075d4.css",
-    "main.js": "/static/js/main.4a7223a9.js",
-    "static/js/787.c6942f56.chunk.js": "/static/js/787.c6942f56.chunk.js",
-    "static/media/4.jpg": "/static/media/4.b2807a9ca18f4fd1acb5.jpg",
-    "static/media/facial.jpg": "/static/media/facial.2f55d39ae4e79006d741.jpg",
-    "static/media/6.jpg": "/static/media/6.9e029861782c64eaad9a.jpg",
-    "static/media/bg.jpg": "/static/media/bg.22d795778456238cbe40.jpg",
-    "static/media/1.jpg": "/static/media/1.b00f8e4221a80f2a9440.jpg",
-    "static/media/7.jpg": "/static/media/7.46fb7c1a3a987ba5e149.jpg",
-    "static/media/2.jpg": "/static/media/2.d87f128cd6a750602ce8.jpg",
-    "static/media/5.jpg": "/static/media/5.587691ee43cdd74153db.jpg",
-    "static/media/3.jpg": "/static/media/3.d5e2c0ecc0b8e8e6273e.jpg",
-    "static/media/logo.png": "/static/media/logo.c71cfa82c2931b0862bf.png",
-    "static/media/kobido.jpg": "/static/media/kobido.b87a4372ddb609a9d5a4.jpg",
-    "static/media/logo-logo.png": "/static/media/logo-logo.44b7b239fd92b3741419.png",
-    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
-    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
-    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
-    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "index.html": "/index.html",
-    "main.ba1075d4.css.map": "/static/css/main.ba1075d4.css.map",
-    "main.4a7223a9.js.map": "/static/js/main.4a7223a9.js.map",
-    "787.c6942f56.chunk.js.map": "/static/js/787.c6942f56.chunk.js.map"
+    "main.css": "/beauty-website/static/css/main.af9a3a4d.css",
+    "main.js": "/beauty-website/static/js/main.2fb77ced.js",
+    "static/js/787.c6942f56.chunk.js": "/beauty-website/static/js/787.c6942f56.chunk.js",
+    "static/media/facial.jpg": "/beauty-website/static/media/facial.2f55d39ae4e79006d741.jpg",
+    "static/media/1.jpg": "/beauty-website/static/media/1.b00f8e4221a80f2a9440.jpg",
+    "static/media/2.jpg": "/beauty-website/static/media/2.d87f128cd6a750602ce8.jpg",
+    "static/media/3.jpg": "/beauty-website/static/media/3.d5e2c0ecc0b8e8e6273e.jpg",
+    "static/media/logo.png": "/beauty-website/static/media/logo.c71cfa82c2931b0862bf.png",
+    "static/media/logo-logo.png": "/beauty-website/static/media/logo-logo.44b7b239fd92b3741419.png",
+    "static/media/slick.svg": "/beauty-website/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/beauty-website/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/beauty-website/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/beauty-website/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/beauty-website/index.html",
+    "main.af9a3a4d.css.map": "/beauty-website/static/css/main.af9a3a4d.css.map",
+    "main.2fb77ced.js.map": "/beauty-website/static/js/main.2fb77ced.js.map",
+    "787.c6942f56.chunk.js.map": "/beauty-website/static/js/787.c6942f56.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba1075d4.css",
-    "static/js/main.4a7223a9.js"
+    "static/css/main.af9a3a4d.css",
+    "static/js/main.2fb77ced.js"
   ]
 }
