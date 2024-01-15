@@ -1,4 +1,4 @@
-// import AboutMeImage from "../images/profile.jpg";
+import AboutMeImage from "../images/profile.jpg";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { useInView } from "react-intersection-observer";
@@ -10,16 +10,19 @@ const AboutMe = () => {
   });
 
   return (
-    <motion.section ref={ref} className="pb-10" id="about-me">
+    <motion.section ref={ref} className="pb-10 bg-[#f2f0f2] text-[#10152b]" id="about-me">
+              <h3 className="text-center text-3xl mb-6 font-['Playfair_Display']">
+          O mnie
+        </h3>
       <motion.img
         ref={ref}
         variants={fadeIn(0.3)}
         initial="hidden"
         animate={inView ? "show" : "hidden"}
         exit="hidden"
-        src="../images/profile.jpg"
+        src={AboutMeImage}
         alt="Kobido massage"
-        className="lg:h-[70vh] lg:mt-12 lg:mx-auto"
+        className="lg:h-[70vh] lg:mx-auto"
       />
       <motion.div
         ref={ref}

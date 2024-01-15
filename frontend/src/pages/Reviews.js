@@ -92,10 +92,10 @@ const Reviews = () => {
 
   return (
     <>
-      <div className="mt-[15vh] lg:mt-[20vh] min-h-[65vh]">
+      <div className="mt-[15vh] lg:mt-[20vh] min-h-[65vh] bg-[#f2f0f2]">
         <motion.section
           ref={ref}
-          className="bg-[#343A56] pt-7 pb-14"
+          className="bg-[#f2f0f2] pt-7 pb-14"
           id="services"
         >
           <motion.h2

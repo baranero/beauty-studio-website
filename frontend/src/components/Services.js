@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
-import Kobido from "../images/1.jpg";
-import handsImg from "../images/2.jpg";
-import eyeImg from "../images/3.jpg";
+import Kobido from "../images/masaz-twarzy.jpg";
+import handsImg from "../images/98.jpg";
+import eyeImg from "../images/96.jpg";
 import { fadeIn } from "../variants";
 import { useInView } from "react-intersection-observer";
 import ServiceCategoryCard from "./ServiceCategoryCard";
@@ -95,7 +95,7 @@ const Services = () => {
   return (
     <motion.section
       ref={ref}
-      className="bg-[#343A56] pt-7 pb-14 min-h-[60vh]"
+      className="bg-[#f2f0f2] pt-7 pb-14 min-h-[60vh]"
       id="services"
     >
       <motion.h2
@@ -104,7 +104,7 @@ const Services = () => {
         initial="hidden"
         animate={inView ? "show" : "hidden"}
         exit="hidden"
-        className="text-center text-3xl mb-8 font-['Playfair_Display']"
+        className="text-center text-[#10152b] text-3xl mb-8 font-['Playfair_Display']"
       >
         Usługi
       </motion.h2>
@@ -114,7 +114,7 @@ const Services = () => {
         inView={inView}
           img={handsImg}
           title="Pielęgnacja dłoni"
-          description="Pielęgnacja dłoni to nie tylko kwestia estetyki, ale przede wszystkim zdrowia i komfortu. Nasze usługi pielęgnacji dłoni to kompleksowe rozwiązania, które obejmują nawilżanie, odżywianie oraz pielęgnację paznokci. Dzięki nim Twoje dłonie będą nie tylko pięknie wyglądać, ale także czuć się zdrowo i komfortowo. Pozwól nam zadbać o Twoje dłonie i ciesz się ich naturalną urodą każdego dnia."
+          description=""
           path="/uslugi/pielegnacja-dloni"
         />
         <ServiceCategoryCard
@@ -122,17 +122,18 @@ const Services = () => {
         inView={inView}
           img={eyeImg}
           title="Pielęgnacja oprawy oczu"
-          description="Pielęgnacja oprawy oczu to kluczowy krok w dbaniu o zdrowie i urodę. Nasze usługi pielęgnacji oprawy oczu obejmują profesjonalne zabiegi, które pomagają wzmocnić rzęsy, podkreślić brwi i redukować zmęczenie oczu. Dzięki naszym specjalistycznym technikom i produktom, uzyskasz piękne i zdrowe oczy. Zadbaj o swoją oprawę oczu już dziś i ciesz się wyrazistym spojrzeniem."
+          description=""
           path="/uslugi/pielegnacja-oczu"
         />
         <ServiceCategoryCard
         ref={ref}
         inView={inView}
           img={Kobido}
-          title="Pielęgnacja i masaże twarzy"
-          description="Pielęgnacja i masaż twarzy to kluczowy element zachowania zdrowej i promiennej skóry. Poprzez delikatne oczyszczanie, nawilżanie i masaż, można redukować napięcie mięśni, stymulować krążenie krwi oraz zachować młodszy wygląd skóry. Nasze profesjonalne usługi pielęgnacji i masażu twarzy pomagają odprężyć się i odzyskać naturalną piękność."
+          title="Pielęgnacja twarzy i ciała"
+          description=""
           path="/uslugi/pielegnacja-twarzy"
         />
+
       </Slider>
     </motion.section>
   );
